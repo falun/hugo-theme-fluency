@@ -14,7 +14,7 @@
         </h3>
         {{ if not site.Params.disableIndexSummary  }}
           <div class="content summary">
-            <p>{{ .Summary | safeHTML }}</p>
+            <p>{{ .Params.Summary | safeHTML }}</p>
             {{ if .Truncated }}
               <span class="hellip">&hellip;</span>
             {{ end }}
