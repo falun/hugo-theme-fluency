@@ -39,6 +39,10 @@
       <div id="comments" class="article-card">
         {{ partial "comments.html" . }}
       </div>
+    {{ else }}
+      <div id="comments" class="article-card">
+        There is no comments section. Just <a href="{{ "about/" | absURL }}">contact me directly</a>.
+      </div>
     {{ end }}
 
   </div>
