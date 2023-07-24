@@ -1,0 +1,2 @@
+{{ $disableType := (in (site.Params.disableCommentByType | default "[]string") .Type) }}
+{{ return (not $disableType) }}

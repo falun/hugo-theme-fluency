@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $enableComment := (partial "utils/comment_is_enabled" . ) }}
+{{ $enableType := (partial "utils/comment_is_enabled_type" .) }}
 <main id="main">
   <div class="container has-padding">
     <div class="article-card post single">
@@ -40,9 +41,11 @@
         {{ partial "comments.html" . }}
       </div>
     {{ else }}
-      <div id="comments" class="article-card">
-        There is no comments section. Just <a href="{{ "about/" | absURL }}">contact me directly</a>.
-      </div>
+      {{ if $enableType }}
+        <div id="comments" class="article-card">
+          There is no comments section. Just <a href="{{ "about/" | absURL }}">contact me directly</a>.
+        </div>
+      {{ end }}
     {{ end }}
 
   </div>
